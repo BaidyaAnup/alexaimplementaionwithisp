@@ -1,0 +1,65 @@
+module.exports = {
+    en: {
+        translation: {
+            WELCOME_NOTE: 'Welcome to Live Dharshan powered by ShemarooMe.<break time="0.2s"/> For %s, I have darshan for %s from %s, say yes to continue or say no to hear more options',
+            PLAYING: 'Playing live darshan from %s, this experience is free for you, for a limited time',
+            PLAYING_WITH_ISP: 'Playing live darshan from %s,this experience is free for 4 minutes',
+            UPSELL_QUERY:'If you liked this experience, you can watch live darshans from 5+ temples for INR 99 per year. Would you like to purchase it?',
+            PLAYING_SPECIFIC:'Okay, Playing the Live Stream from %s. This experience is free for you for a limited amount of time.',
+            PLAYING_SPECIFIC_WITH_ISP:'Okay, this experience is free for you for 4 minutes,playing %s',
+            STATEMENT_ONE:'I can play darshan from 5+ temples all over India like Sai, Shiv or you can ask me for a list. which one would you like?',
+            QUERY_ONE:'I have darshans from Prati Shirdi Saibaba, Babulnath Mumbai, Shri Vigneshwar Ozar and other temples. Tell me the name of the temple or say more, to hear more options.',
+            MORE:'I have darshans from Prati Shirdi Saibaba, Babulnath Mumbai, Shri Vigneshwar Ozar, ISKCON Girgaon, Iccha Puran Balaji, Maa Mahalaxmi, Shree Shani Shingnapur, Mahaganpati Ranjangaon and Ganga Darshan Varanasi. Tell me the name of the temple',
+            MONDAY:'Monday',
+            TUESDAY:'Tuesday',
+            WEDNESDAY:'Wednesday',
+            THRUSDAY:'Thursday',
+            FRIDAY:'Friday',
+            SATURDAY:'Saturday',
+            SUNDAY:'Sunday',
+            STOP:'Thank You for visiting ShemarooMe Live Darshan',
+            ERROR_MESSAGE:"Sorry I don’t have the temple you requested. I have darshans from Prati Shirdi Saibaba, Babulnath Mumbai, Shri Vigneshwar Ozar and other temples. Tell me the name of the temple or say more, to hear more options.",
+            GANGA:'Maa Ganga',
+            SHIV:'Lord Shiv',
+            GANESH:'Lord Ganesh',
+            KRISHNA:'Lord Krishna',
+            BALAJI: 'Lord Balaji',
+            SAI:'Lord Sai',
+            LAKSHMI:'Maa Lakshmi',
+            SHANI:'Lord Shani',
+            GANPATI:'Lord Ganpati'
+        }
+    },
+    hi: {
+        translation:{
+            WELCOME_NOTE: 'शेमारूमी द्वारा संचालित लाइव दर्शन में आपका स्वागत है, %s के लिए मुझे %s के लिए %s से दर्शन का अनुभव है, जारी रखने के लिए हाँ कहें? या अधिक विकल्प सुनने के लिए नहीं कहें?',
+            PLAYING:'%s से सीधा प्रसारण चल रहा है | यह अनुभव सीमित समय के लिए आपके लिए निःशुल्क है |',
+            PLAYING_WITH_ISP: '%s से सीधा प्रसारण चल रहा है | ये अनुभव 4 मिनट तक निशुल्क है |  ',
+            UPSELL_QUERY:'अगर आपको ये अनुभव पसंद आया तो आप मात्र 99 रुपये प्रति वर्ष में पांच से ज़ादा मंदिरों का सीधा प्रसारण देख सकते हैं | क्या आप ये खरीदना चाहेंगे?',
+            PLAYING_SPECIFIC:'ठीक है %s से सीधा प्रसारण चल रहा है | यह अनुभव सीमित समय के लिए आपके लिए निःशुल्क है |',
+            PLAYING_SPECIFIC_WITH_ISP:'ठीक है ये अनुभव आपके लिए 4 मिनट तक निशुल्क है | %s चल रहा है |',
+            STATEMENT_ONE: 'मैं साईं, शिव जैसे पूरे भारत में पाँच से अधिक मंदिरों से दर्शन कर सकता हूं या आप मुझसे सूची मांग सकते हैं। आप कौन सा पसंद करेंगे?',
+            QUERY_ONE: 'मेरे पास प्रति शिरडी साईबाबा, बाबुलनाथ मुंबई, श्री विग्नेश्वर ओजर और अन्य मंदिरों के दर्शन हैं। मुझे मंदिर का नाम बताओ या और अधिक विकल्प सुनने के लिए अधिक कहो।',
+            MORE:'मेरे पास प्रति शिरडी साईबाबा, बाबुलनाथ मुंबई, श्री विग्नेश्वर ओजर, इस्कॉन गिरगांव, इच्छा पुराण बालाजी, मां महालक्ष्मी, श्री शनि शिंगणापुर, महागणपति रंजनगांव और गंगा दर्शन वाराणसी के दर्शन हैं। मंदिर का नाम बताओ',
+            MONDAY:'सोमवार',
+            TUESDAY:'मंगलवार',
+            WEDNESDAY:'बुधवार',
+            THRUSDAY:'गुरूवार',
+            FRIDAY:'शुक्रवार',
+            SATURDAY:'शनिवार',
+            SUNDAY:'रविवार',
+            STOP:'शेमारूमी लाइव दर्शन में आने के लिए आपका धन्यवाद',
+            ERROR_MESSAGE:"क्षमा करें मेरे पास वह मंदिर नहीं है जिसका आपने अनुरोध किया था। मेरे पास प्रति शिरडी साईबाबा, बाबुलनाथ मुंबई, श्री विग्नेश्वर ओजर और अन्य मंदिरों के दर्शन हैं। मुझे मंदिर का नाम बताओ या और अधिक विकल्प सुनने के लिए अधिक कहो।",
+            GANGA:'माँ गंगा',
+            SHIV:'भगवान शिव',
+            GANESH:'भगवान गणेश',
+            KRISHNA:'भगवान कृष्ण',
+            BALAJI: 'भगवान बालाजी',
+            SAI:'भगवान साईं',
+            LAKSHMI:'माँ लक्ष्मी',
+            SHANI:'भगवान शनि',
+            GANPATI:'भगवान गणपति'
+
+        }
+    }
+}

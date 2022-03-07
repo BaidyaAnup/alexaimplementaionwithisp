@@ -1,0 +1,130 @@
+[
+		{ 
+		"deityId": "ganga",
+    	"deity_Name": 0,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Ganga+Darshan%2C+Varanasi.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Gangaa_Aarti.mp4",
+        "day": 0,
+    	"location": [
+				    {
+				    "name":"Ganga Darshan Varanasi",
+				    "livestream_url": "http://surl.shemaroome.com/v2/smart_urls/5d136d26cebd8d197c000000"
+					}
+   		]
+
+  	},
+	{ 
+		"deityId": "shiv",
+    	"deity_Name": 1,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Babulnath+Live%2C+Mumbai.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Babulnath-Live-Mumbai.mp4",
+        "day": 1,
+    	"location": [
+				    {
+				    "name":"Babulnath Mumbai",
+				    "livestream_url": "http://surl.shemaroome.com/v2/smart_urls/5c80df8b297516162c000000"
+					}
+   		]
+  	},
+	{ 
+		"deityId": "ganesh",
+    	"deity_Name": 2,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Shri+Vigneshwar+Ozar.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Shri-Vigneshwar-Ozar.mp4",
+        "day": 2,
+    	"location": [
+				    {
+				    "name":"Shri Vigneshwar Ozar",
+				    "livestream_url": "http://34.227.63.170/v2/smart_urls/5bcd7e762975160618000000"
+					}
+   		]
+  	},
+	{ 
+		"deityId": "krishna",
+    	"deity_Name": 3,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/ISKCON+Girgaon+Live.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/ISKCON-Girgaon-Live.mp4",
+        "day": 3,
+    	"location": [
+				    {
+				    "name":"ISKCON Girgaon",
+				    "livestream_url": "http://34.227.63.170/v2/smart_urls/5c6296552975160ffc000002"
+					}
+   		]
+
+  	},
+	{ 
+		"deityId": "balaji",
+    	"deity_Name": 4,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Iccha+Puran+Balaji.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Iccha-Puran-Balaji.mp4",
+        "day": 4,
+    	"location": [
+				    {
+				    "name":"Iccha Puran Balaji",
+				    "livestream_url": "http://34.227.63.170/v2/smart_urls/5bcd815c2975160650000000"
+					}
+   		]
+
+  	},
+	{ 
+		"deityId": "lakshmi",
+    	"deity_Name": 5,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Maa+Mahalaxmi+Live.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Maa-Mahalaxmi.mp4",
+        "day": 5,
+    	"location": [
+				    {
+				    "name":"Maa Mahalaxmi",
+				    "livestream_url": "http://34.227.63.170/v2/smart_urls/5bcd815d2975160650000002"
+					}
+   		]
+
+  	},
+	{ 
+		"deityId": "shani",
+    	"deity_Name": 6,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Shani+Shingnapur+Live.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Shani-Shingnapur.mp4",
+        "day": 6,
+    	"location": [
+				    {
+				    "name":"Shree Shani Shingnapur",
+				    "livestream_url": "http://34.227.63.170/v2/smart_urls/5bcd815e2975160650000006"
+					}
+   		]
+
+  	},
+	{ 	
+		"deityId": "sai",
+    	"deity_Name": 7,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Prati+Shirdi+Saibaba+Live.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Prati-Shirdi-Saibaba-Live.mp4",
+        "day": 7,
+    	"location": [
+				    {
+				    "name":"Prati Shirdi Saibaba",
+				    "livestream_url": "http://34.227.63.170/v2/smart_urls/5bcd815f2975160650000008"
+					}
+   		]
+
+  	},
+	{ 	
+		"deityId": "ganpati",
+    	"deity_Name": 8,
+    	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Mahaganpati+Ranjangaon.mp3",
+        "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Mahaganpati-Ranjangaon.mp4",
+        "day": 8,
+    	"location": [
+				    {
+				    "name":"Mahaganpati Ranjangaon",
+				    "livestream_url": "http://surl.shemaroome.com/v2/smart_urls/5e99667e741cbb2c88000000"
+					}
+   		]
+
+  	}
+
+
+]
+
+
