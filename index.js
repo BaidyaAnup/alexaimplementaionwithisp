@@ -5,7 +5,6 @@ const content = require('./contents.json')
 const videoTemplate = require('./video_display.json')
 var aplTemplateWelcome = require('./apl_template_export_welcome.json')
 var aplTemplateFullList = require('./apl_template_export_horizontal_layout_fulllist.json')
-var aplTemplateFullListHindi = require('./apl_template_export_horizontal_layout_fulllist_hindi.json')
 const md5 = require('crypto-md5');
 const axios = require('axios');
 const i18n = require('i18next');
@@ -123,7 +122,7 @@ async function askToPlayIntent(handlerInput){
   var short_audio = play.short_audio
   var free_audio = play.free_audio_url
   var free_video = play.free_video_url
-  deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio)
+  deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio,free_video)
   deityInfo = deity_info_array.join("$$")
   var sessionAttribute = handlerInput.attributesManager.getSessionAttributes();
 
@@ -176,7 +175,7 @@ const YesNoIntentHandler = {
     var short_audio = deityForToday.short_audio;
     var free_audio = deityForToday.free_audio_url
     var free_video = deityForToday.free_video_url
-    deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio)
+    deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio,free_video)
     deityInfo = deity_info_array.join("$$")
     var sessionAttribute = await handlerInput.attributesManager.getSessionAttributes();
 
@@ -222,13 +221,8 @@ const YesNoIntentHandler = {
       } else {
         console.log("--------------> I am no intent")
         var speechText = '<speak>' + requestAttributes.t('QUERY_ONE') + '</speak>'; 
-        if(handlerInput.requestEnvelope.request.locale === "hi-IN"){
-          var apl_doc = aplTemplateFullListHindi.document
-          var apl_data = aplTemplateFullListHindi.datasources
-        }else {
-          var apl_doc = aplTemplateFullList.document
-          var apl_data = aplTemplateFullList.datasources
-        }     
+        var apl_doc = aplTemplateFullList.document
+        var apl_data = aplTemplateFullList.datasources 
         return handlerInput.responseBuilder.speak(speechText)
         .withShouldEndSession(false)
         .addDirective({
@@ -240,62 +234,6 @@ const YesNoIntentHandler = {
         }).getResponse();                       
       }
     }
-  }
-};
-
-const VideoEndedEventHandler = {
-    canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent'
-        && handlerInput.requestEnvelope.request.arguments &&
-            handlerInput.requestEnvelope.request.arguments[0] === 'video_finished'
-    },
-    async handle(handlerInput) {
-        var play_url = '';
-        var res = ''
-        console.log(`UserEventHandler: ${JSON.stringify(handlerInput.requestEnvelope.request)}`);
-
-        var sessionAttribute = await handlerInput.attributesManager.getSessionAttributes();
-        var persistenceAttributes = await handlerInput.attributesManager.getPersistentAttributes();
-        const locale = handlerInput.requestEnvelope.request.locale;
-        const monetizationClient = handlerInput.serviceClientFactory.getMonetizationServiceClient();
-        console.log(`Usersessions: ${JSON.stringify(sessionAttribute)}`);
-        console.log("i m videdendedintent=======>::sessionAttribute.url::" + sessionAttribute.url)
-
-        if(sessionAttribute == null) {
-          sessionAttribute = {};
-        }
-        res = await monetizationClient.getInSkillProducts(locale);
-    // Use the helper function getResponseBasedOnAccessType to determine the response based on the products the customer has purchased
- 
-        const premiumSubscriptionProduct = res.inSkillProducts.filter(
-            record => record.referenceName === 'Premium_Subscription_Monthly',
-          );
-
-        if(isEntitled(premiumSubscriptionProduct)){
-          play_url = persistenceAttributes.play_url
-        }else{
-          play_url = persistenceAttributes.free_video
-        }
-
-        var dataSource = {
-        //dynamically populate the JSON Array below
-          videoTemplateData: {
-            type: "object",
-            videoUrl: [
-                {
-                  url : play_url
-                }
-              ]
-            }
-          };
-          return handlerInput.responseBuilder
-          .addDirective({
-            type: 'Alexa.Presentation.APL.RenderDocument',
-            token: '[SkillProvidedToken]',
-            version: '1.0',
-            document: videoTemplate.document,
-            datasources: dataSource
-          }).getResponse();
   }
 };
 
@@ -484,13 +422,8 @@ const ListIntentHandler = {
      return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
     }else{
       speechText = requestAttributes.t('MORE')
-      if(handlerInput.requestEnvelope.request.locale === "hi-IN"){
-        var apl_doc = aplTemplateFullListHindi.document
-        var apl_data = aplTemplateFullListHindi.datasources
-      }else {
-        var apl_doc = aplTemplateFullList.document
-        var apl_data = aplTemplateFullList.datasources
-      }
+      var apl_doc = aplTemplateFullList.document
+      var apl_data = aplTemplateFullList.datasources
       return handlerInput.responseBuilder.speak(speechText)
       .withShouldEndSession(false)
       .addDirective({
@@ -722,20 +655,6 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
 
         } else {
           console.log("=============> I m yes intent::" + deity_url)
-           if(handlerInput.requestEnvelope.request.locale === "hi-IN"){
-            var dataSource = {
-            //dynamically populate the JSON Array below
-              videoTemplateData: {
-                type: "object",
-                videoUrl: [
-                    {
-                      url : "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/new_play_hindi.mp4"
-                    }
-                  ]
-                }
-              };
-
-            }else{
 
             var dataSource = {
             //dynamically populate the JSON Array below
@@ -743,14 +662,13 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
                 type: "object",
                 videoUrl: [
                     {
-                      url : "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/new_play_english.mp4"
+                      url : deity_url
                     }
                   ]
                 }
-              };
 
            }
-            return handlerInput.responseBuilder
+            return handlerInput.responseBuilder.speak(speechText)
             .addDirective({
               type: 'Alexa.Presentation.APL.RenderDocument',
               token: '[SkillProvidedToken]',
@@ -849,6 +767,7 @@ function playTheDarshan(handlerInput,deityInfo){
         var deity_name = deityInfoArr[2]
         var short_audio = deityInfoArr[3]
         var free_audio = deityInfoArr[4]
+        var free_video = deityInfoArr[5]
       }
       if(handlerInput.requestEnvelope.context.Viewport == null) {
         // return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
@@ -868,20 +787,6 @@ function playTheDarshan(handlerInput,deityInfo){
 
         } else {
           console.log("=============> I m yes intent::" + free_audio)
-           if(handlerInput.requestEnvelope.request.locale === "hi-IN"){
-            var dataSource = {
-            //dynamically populate the JSON Array below
-              videoTemplateData: {
-                type: "object",
-                videoUrl: [
-                    {
-                      url : "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/new_play_hindi.mp4"
-                    }
-                  ]
-                }
-              };
-
-            }else{
 
             var dataSource = {
             //dynamically populate the JSON Array below
@@ -889,14 +794,13 @@ function playTheDarshan(handlerInput,deityInfo){
                 type: "object",
                 videoUrl: [
                     {
-                      url : "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/new_play_english.mp4"
+                      url : free_video
                     }
                   ]
                 }
-              };
 
            }
-            return handlerInput.responseBuilder
+            return handlerInput.responseBuilder.speak(speechText)
             .addDirective({
               type: 'Alexa.Presentation.APL.RenderDocument',
               token: '[SkillProvidedToken]',
@@ -927,7 +831,6 @@ exports.handler = skillBuilder
         ResumeIntentHandler,
         AskToPlayIntentHandler,
         ListIntentHandler,
-        VideoEndedEventHandler,
         AudioPlayerIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
