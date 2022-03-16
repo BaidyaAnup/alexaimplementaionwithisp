@@ -4,6 +4,7 @@
     	"deity_Name": 0,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Ganga+Darshan%2C+Varanasi.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Gangaa_Aarti.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Gangaaarti_Eveningaartimpeg.mp3",
         "day": 0,
     	"location": [
 				    {
@@ -18,6 +19,7 @@
     	"deity_Name": 1,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Babulnath+Live%2C+Mumbai.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Babulnath-Live-Mumbai.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Babulnath_HDmpeg.mp3",
         "day": 1,
     	"location": [
 				    {
@@ -31,6 +33,7 @@
     	"deity_Name": 2,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Shri+Vigneshwar+Ozar.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Shri-Vigneshwar-Ozar.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Ozar_Morning_SDmpeg.mp3",
         "day": 2,
     	"location": [
 				    {
@@ -44,6 +47,7 @@
     	"deity_Name": 3,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/ISKCON+Girgaon+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/ISKCON-Girgaon-Live.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Iskongirgoav_Afternoon_SDmpeg.mp3",
         "day": 3,
     	"location": [
 				    {
@@ -58,6 +62,7 @@
     	"deity_Name": 4,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Iccha+Puran+Balaji.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Iccha-Puran-Balaji.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Ichchhapuranbalaji_Eveningmpeg.mp3",
         "day": 4,
     	"location": [
 				    {
@@ -72,6 +77,7 @@
     	"deity_Name": 5,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Maa+Mahalaxmi+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Maa-Mahalaxmi.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Mahalaxmimpeg.mp3",
         "day": 5,
     	"location": [
 				    {
@@ -86,6 +92,7 @@
     	"deity_Name": 6,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Shani+Shingnapur+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Shani-Shingnapur.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Shanidev_Eveningmpeg.mp3",
         "day": 6,
     	"location": [
 				    {
@@ -100,6 +107,7 @@
     	"deity_Name": 7,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Prati+Shirdi+Saibaba+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Prati-Shirdi-Saibaba-Live.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Shanidev_Eveningmpeg.mp3",
         "day": 7,
     	"location": [
 				    {
@@ -114,6 +122,7 @@
     	"deity_Name": 8,
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Mahaganpati+Ranjangaon.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Mahaganpati-Ranjangaon.mp4",
+        "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Mahaganpati_Ranjangaonmpeg.mp3",
         "day": 8,
     	"location": [
 				    {

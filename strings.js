@@ -3,10 +3,10 @@ module.exports = {
         translation: {
             WELCOME_NOTE: 'Welcome to Live Dharshan powered by ShemarooMe.<break time="0.2s"/> For %s, I have darshan for %s from %s, say yes to continue or say no to hear more options',
             PLAYING: 'Playing live darshan from %s, this experience is free for you, for a limited time',
-            PLAYING_WITH_ISP: 'Playing live darshan from %s,this experience is free for 4 minutes',
+            PLAYING_WITH_ISP: 'Playing free version of  live darshan from %s.',
             UPSELL_QUERY:'If you liked this experience, you can watch live darshans from 5+ temples for INR 99 per year. Would you like to purchase it?',
             PLAYING_SPECIFIC:'Okay, Playing the Live Stream from %s. This experience is free for you for a limited amount of time.',
-            PLAYING_SPECIFIC_WITH_ISP:'Okay, this experience is free for you for 4 minutes,playing %s',
+            PLAYING_SPECIFIC_WITH_ISP:'Okay, this experience is free for you for less than 4 minutes,playing %s',
             STATEMENT_ONE:'I can play darshan from 5+ temples all over India like Sai, Shiv or you can ask me for a list. which one would you like?',
             QUERY_ONE:'I have darshans from Prati Shirdi Saibaba, Babulnath Mumbai, Shri Vigneshwar Ozar and other temples. Tell me the name of the temple or say more, to hear more options.',
             MORE:'I have darshans from Prati Shirdi Saibaba, Babulnath Mumbai, Shri Vigneshwar Ozar, ISKCON Girgaon, Iccha Puran Balaji, Maa Mahalaxmi, Shree Shani Shingnapur, Mahaganpati Ranjangaon and Ganga Darshan Varanasi. Tell me the name of the temple',
