@@ -5,6 +5,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Ganga+Darshan%2C+Varanasi.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Gangaa_Aarti.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Gangaaarti_Eveningaartimpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/gangaaarti_eveningaarti.mp4",
         "day": 0,
     	"location": [
 				    {
@@ -20,6 +21,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Babulnath+Live%2C+Mumbai.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Babulnath-Live-Mumbai.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Babulnath_HDmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/Babulnath.mp4",
         "day": 1,
     	"location": [
 				    {
@@ -34,6 +36,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Shri+Vigneshwar+Ozar.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Shri-Vigneshwar-Ozar.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Ozar_Morning_SDmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/ozar_morning.mp4",
         "day": 2,
     	"location": [
 				    {
@@ -48,6 +51,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/ISKCON+Girgaon+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/ISKCON-Girgaon-Live.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Iskongirgoav_Afternoon_SDmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/iskongirgoav_afternoon.mp4",
         "day": 3,
     	"location": [
 				    {
@@ -63,6 +67,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Iccha+Puran+Balaji.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Iccha-Puran-Balaji.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Ichchhapuranbalaji_Eveningmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/ichchhapuranbalaji_evening.mp4",
         "day": 4,
     	"location": [
 				    {
@@ -78,6 +83,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Maa+Mahalaxmi+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Maa-Mahalaxmi.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Mahalaxmimpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/Mahalaxmi_HD_Clean.mp4",
         "day": 5,
     	"location": [
 				    {
@@ -93,6 +99,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Shani+Shingnapur+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Shani-Shingnapur.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Shanidev_Eveningmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/shanidev_evening.mp4",
         "day": 6,
     	"location": [
 				    {
@@ -108,6 +115,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Prati+Shirdi+Saibaba+Live.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Prati-Shirdi-Saibaba-Live.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Shanidev_Eveningmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/pratishirdi_afternoon_aarti.mp4",
         "day": 7,
     	"location": [
 				    {
@@ -123,6 +131,7 @@
     	"free_audio_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Audio_Files/Mahaganpati+Ranjangaon.mp3",
         "free_video_url": "https://d3gjzbiiz7ab7p.cloudfront.net/Video_Files/Mahaganpati-Ranjangaon.mp4",
         "short_audio": "https://d3gjzbiiz7ab7p.cloudfront.net/3_min_audio/Mahaganpati_Ranjangaonmpeg.mp3",
+        "short_video": "https://d3gjzbiiz7ab7p.cloudfront.net/4_Minute_Duration/Mahaganpati_Ranjangaon_HD_Clean.mp4",
         "day": 8,
     	"location": [
 				    {
@@ -135,5 +144,4 @@
 
 
 ]
-
 

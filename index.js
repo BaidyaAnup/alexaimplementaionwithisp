@@ -122,7 +122,8 @@ async function askToPlayIntent(handlerInput){
   var short_audio = play.short_audio
   var free_audio = play.free_audio_url
   var free_video = play.free_video_url
-  deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio,free_video)
+  var short_video = play.short_video
+  deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio,free_video,short_video)
   deityInfo = deity_info_array.join("$$")
   var sessionAttribute = handlerInput.attributesManager.getSessionAttributes();
 
@@ -173,9 +174,10 @@ const YesNoIntentHandler = {
     var deity_location = deityForToday.location[0].name
     var deity_name = deityForToday.deity_Name
     var short_audio = deityForToday.short_audio;
+    var short_video = deityForToday.short_video
     var free_audio = deityForToday.free_audio_url
     var free_video = deityForToday.free_video_url
-    deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio,free_video)
+    deity_info_array.push(url,deity_location,deity_name,short_audio,free_audio,free_video,short_video)
     deityInfo = deity_info_array.join("$$")
     var sessionAttribute = await handlerInput.attributesManager.getSessionAttributes();
 
@@ -603,6 +605,47 @@ const BuyResponseHandler = {
     });
   },
 };
+
+
+
+const VideoEndedEventHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'Alexa.Presentation.APL.UserEvent'
+        && handlerInput.requestEnvelope.request.arguments &&
+            handlerInput.requestEnvelope.request.arguments[0] === 'video_finished'
+    },
+    async handle(handlerInput) {
+        console.log(`UserEventHandler: ${JSON.stringify(handlerInput.requestEnvelope.request)}`);
+        var sessionAttribute = handlerInput.attributesManager.getSessionAttributes();
+        const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
+        console.log(`i am video end event with session::${JSON.stringify(sessionAttribute)}`)
+        if(sessionAttribute && sessionAttribute.videoEnd == true){
+          var speechText = "If you liked this experience, you can take subscription to access all our live darshans. Would you like to know about it?"
+                           
+          return handlerInput.responseBuilder.speak(speechText)
+          .withShouldEndSession(false)
+          .addDirective({
+            type: 'Alexa.Presentation.APL.RenderDocument',
+            token: '[SkillProvidedToken]',
+            version: '1.0',
+            document: aplTemplateWelcome.document,
+            datasources: aplTemplateWelcome.datasources
+          }).getResponse(); 
+
+        }else{
+          return handlerInput.responseBuilder
+          .addDirective({
+            type: 'Alexa.Presentation.APL.RenderDocument',
+            token: '[SkillProvidedToken]',
+            version: '1.0',
+            document: aplTemplateWelcome.document,
+            datasources: aplTemplateWelcome.datasources
+          }).getResponse();
+        }
+
+ 
+  }
+};
 // *****************************************
 // *********** HELPER FUNCTIONS ************
 // *****************************************
@@ -611,14 +654,20 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
   const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
 
   var sessionAttribute = handlerInput.attributesManager.getSessionAttributes();
+  if(sessionAttribute && sessionAttribute.videoEnd){
+    sessionAttribute.videoEnd = '';
+    handlerInput.attributesManager.setSessionAttributes(sessionAttribute);
+  }
   if(deityInfo != undefined){
     var deityInfoArr = deityInfo.split("$$")
     var deity_url = deityInfoArr[0]
     var deity_location_name = deityInfoArr[1]
     var deity_name = deityInfoArr[2]
     var short_audio = deityInfoArr[3]
+    var short_video = deityInfoArr[6]
   }
   console.log("======>>short_audio::" + short_audio)
+   console.log("======>>short_audio::" + short_video)
 
 
   const deities = [requestAttributes.t('GANGA'), requestAttributes.t('SHIV'), requestAttributes.t('GANESH'), requestAttributes.t('KRISHNA'),requestAttributes.t('BALAJI'),requestAttributes.t('LAKSHMI'),requestAttributes.t('SHANI'),requestAttributes.t('SAI'),requestAttributes.t('GANPATI')];
@@ -682,16 +731,50 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
     } else {
       // Customer has not bought the Premium Subscription.
       if (shouldUpsell(handlerInput)) {
-        var speechText = `<speak>
-                          ${requestAttributes.t('PLAYING_SPECIFIC_WITH_ISP',deity_location_name)} 
-                          <audio src=\"${short_audio}\"/>
-                          If you liked this experience, you can take subscription to access all our live darshans. Would
-                          you like to know about it?
-                         </speak>`
-         sessionAttribute.userPurchasePrompt = true;  
-         sessionAttribute.deityInfo = deityInfo  
-         handlerInput.attributesManager.setSessionAttributes(sessionAttribute);
-        return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
+        if(handlerInput.requestEnvelope.context.Viewport == null) {
+            var speechText = `<speak>
+                              ${requestAttributes.t('PLAYING_SPECIFIC_WITH_ISP',deity_location_name)} 
+                              <audio src=\"${short_audio}\"/>
+                              If you liked this experience, you can take subscription to access all our live darshans. Would
+                              you like to know about it?
+                             </speak>`
+             sessionAttribute.userPurchasePrompt = true;  
+             sessionAttribute.deityInfo = deityInfo  
+             handlerInput.attributesManager.setSessionAttributes(sessionAttribute);
+            return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
+        }else{
+
+            var speechText = `<speak>
+                              ${requestAttributes.t('PLAYING_SPECIFIC_WITH_ISP',deity_location_name)} 
+                             </speak>`
+            var dataSource = {
+            //dynamically populate the JSON Array below
+              videoTemplateData: {
+                type: "object",
+                videoUrl: [
+                    {
+                      url : short_video
+                    }
+                  ]
+                }
+
+           }
+
+             sessionAttribute.userPurchasePrompt = true; 
+             sessionAttribute.videoEnd = true
+             sessionAttribute.deityInfo = deityInfo  
+             handlerInput.attributesManager.setSessionAttributes(sessionAttribute);
+            return handlerInput.responseBuilder.speak(speechText)
+            .addDirective({
+              type: 'Alexa.Presentation.APL.RenderDocument',
+              token: '[SkillProvidedToken]',
+              version: '1.0',
+              document: videoTemplate.document,
+              datasources: dataSource
+            }).getResponse();
+
+        }
+
       }
       return handlerInput.responseBuilder.speak(speechText).getResponse();
     }
@@ -713,6 +796,13 @@ function makeUpsell(premiumSubscriptionProduct, handlerInput,deityInfo) {
         upsellMessage,
       },
       token: deityInfo,
+    })
+    .addDirective({
+      type: 'Alexa.Presentation.APL.RenderDocument',
+      token: '[SkillProvidedToken]',
+      version: '1.0',
+      document: aplTemplateWelcome.document,
+      datasources: aplTemplateWelcome.datasources
     })
     .getResponse();
 }
@@ -759,6 +849,11 @@ function getBuyResponseText(productReferenceName, productName) {
 
 function playTheDarshan(handlerInput,deityInfo){
       const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
+      var sessionAttribute = handlerInput.attributesManager.getSessionAttributes();
+      if(sessionAttribute && sessionAttribute.videoEnd){
+        sessionAttribute.videoEnd = '';
+        handlerInput.attributesManager.setSessionAttributes(sessionAttribute);
+      }
       var offset = 0;
       if(deityInfo != undefined){
         var deityInfoArr = deityInfo.split("$$")
@@ -768,6 +863,7 @@ function playTheDarshan(handlerInput,deityInfo){
         var short_audio = deityInfoArr[3]
         var free_audio = deityInfoArr[4]
         var free_video = deityInfoArr[5]
+        var short_video = deityInfoArr[6]
       }
       if(handlerInput.requestEnvelope.context.Viewport == null) {
         // return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
@@ -832,6 +928,7 @@ exports.handler = skillBuilder
         AskToPlayIntentHandler,
         ListIntentHandler,
         AudioPlayerIntentHandler,
+        VideoEndedEventHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
         BuyResponseHandler
