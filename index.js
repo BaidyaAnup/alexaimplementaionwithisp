@@ -667,7 +667,7 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
     var short_video = deityInfoArr[6]
   }
   console.log("======>>short_audio::" + short_audio)
-   console.log("======>>short_audio::" + short_video)
+   console.log("======>>short_video::" + short_video)
 
 
   const deities = [requestAttributes.t('GANGA'), requestAttributes.t('SHIV'), requestAttributes.t('GANESH'), requestAttributes.t('KRISHNA'),requestAttributes.t('BALAJI'),requestAttributes.t('LAKSHMI'),requestAttributes.t('SHANI'),requestAttributes.t('SAI'),requestAttributes.t('GANPATI')];
@@ -685,12 +685,12 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
   var offset = 0
 
     if (isEntitled(premiumSubscriptionProduct)) {
+    var speechText = `<speak>
+                  <w role="amazon:NN"> ${requestAttributes.t('PLAYING',deity_location_name)}</w>
+              </speak>`
 
       if(handlerInput.requestEnvelope.context.Viewport == null) {
         // return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
-          var speechText = `<speak>
-                          <w role="amazon:NN"> ${requestAttributes.t('PLAYING',deity_location_name)}</w>
-                      </speak>`
           var deityName = deities[deity_name]
           var metadata = {
             title: deityName,
@@ -865,11 +865,11 @@ function playTheDarshan(handlerInput,deityInfo){
         var free_video = deityInfoArr[5]
         var short_video = deityInfoArr[6]
       }
+      var speechText = `<speak>
+                      <w role="amazon:NN"> ${requestAttributes.t('PLAYING_WITH_ISP',deity_location_name)}</w>
+                  </speak>`
       if(handlerInput.requestEnvelope.context.Viewport == null) {
         // return handlerInput.responseBuilder.speak(speechText).withShouldEndSession(false).getResponse();
-          var speechText = `<speak>
-                          <w role="amazon:NN"> ${requestAttributes.t('PLAYING_WITH_ISP',deity_location_name)}</w>
-                      </speak>`
           var deityName = deity_name
           var metadata = {
             title: deity_name,
