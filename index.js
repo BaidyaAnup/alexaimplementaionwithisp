@@ -886,7 +886,7 @@ const CancelProductResponseHandler = {
 async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityInfo) {
   const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
 
-  var sessionAttribute = handlerInput.attributesManager.getSessionAttributes();
+  var sessionAttribute = await handlerInput.attributesManager.getSessionAttributes();
   if(sessionAttribute && sessionAttribute.videoEnd){
     sessionAttribute.videoEnd = '';
     handlerInput.attributesManager.setSessionAttributes(sessionAttribute);
@@ -963,12 +963,16 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
 
     } else {
       // Customer has not bought the Premium Subscription.
-      if (shouldUpsell(handlerInput)) {
+      // if (shouldUpsell(handlerInput)) {
+      //     console.log(
+      //       `shouldUpsell = ${JSON.stringify(shouldUpsell(handlerInput))}`,
+      //       );
+
         if(handlerInput.requestEnvelope.context.Viewport == null) {
             var speechText = `<speak>
                               ${requestAttributes.t('PLAYING_SPECIFIC_WITH_ISP',deity_location_name)} 
                               <audio src=\"${short_audio}\"/>
-                              If you liked this experience, you can take subscription to access all our live darshans. Would
+                              If you liked this experience, you can take subscription for uninterrupted access all our live darshans. Would
                               you like to know about it?
                              </speak>`
              sessionAttribute.userPurchasePrompt = true;  
@@ -1008,8 +1012,9 @@ async function getResponseBasedOnAccessType(handlerInput, res, speechText,deityI
 
         }
 
-      }
-      return handlerInput.responseBuilder.speak(speechText).getResponse();
+      // }
+      // var speechText = 'I am here right now'
+      // return handlerInput.responseBuilder.speak(speechText).getResponse();
     }
 
 }
@@ -1081,14 +1086,14 @@ function isEntitled(product) {
   return isProduct(product) && product[0].entitled === 'ENTITLED';
 }
 
-function shouldUpsell(handlerInput) {
-  if (handlerInput.requestEnvelope.request.intent === undefined) {
-    // If the last intent was Connections.Response, do not upsell
-    return false;
-  }
+// function shouldUpsell(handlerInput) {
+//   if (handlerInput.requestEnvelope.request.intent === undefined) {
+//     // If the last intent was Connections.Response, do not upsell
+//     return false;
+//   }
 
-  return randomize([true, false]); // randomize upsell
-}
+//   return randomize([true, false]); // randomize upsell
+// }
 
 function getBuyResponseText(productReferenceName, productName) {
   if (productReferenceName === 'Premium_Subscription_Monthly') {
